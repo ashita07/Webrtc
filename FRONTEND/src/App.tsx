@@ -23,7 +23,11 @@ function App() {
     ws.onmessage = (ev) => {
       alert(ev.data);
     };
+    return () => {
+      ws.close();
+    };
   }, []);
+
   return (
     <>
       <div className="flex flex-col items-center">

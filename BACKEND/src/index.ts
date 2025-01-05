@@ -4,11 +4,10 @@ const wss = new WebSocketServer({ port: 8080 });
 
 wss.on("connection", function (socket) {
   console.log("user connected");
-
+  console.log(socket);
   socket.on("message", (e) => {
     if (e.toString() === "ping") {
       socket.send("pong");
-      console.log(e);
     }
   });
 });
