@@ -8,6 +8,7 @@ wss.on("connection", function (socket) {
   socket.on("message", (e) => {
     if (e.toString() === "ping") {
       socket.send("pong");
+      console.log(e);
     }
   });
 });
